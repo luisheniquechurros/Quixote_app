@@ -13,6 +13,7 @@ class QuixoteApp extends StatelessWidget {
     SystemChrome.setSystemUIOverlayStyle(
         SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return MaterialApp(
+      title: 'Quixote App',
       debugShowCheckedModeBanner: false,
       home: PaginaInicial(),
     );

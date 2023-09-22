@@ -18,7 +18,7 @@ class PaginaInicial extends StatelessWidget {
               ),
             ),
           ),
-          Row(
+          const Row(
             children: [
               Padding(
                 padding: EdgeInsets.only(top: 50, left: 38),
@@ -54,7 +54,7 @@ class PaginaInicial extends StatelessWidget {
                     child: SvgPicture.asset('assets/images/placeholder.svg',
                         width: 100, height: 159),
                   ),
-                  Column(
+                  const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
@@ -91,7 +91,7 @@ class PaginaInicial extends StatelessWidget {
               ),
             ),
           ),
-          Row(
+          const Row(
             children: [
               Padding(
                 padding: EdgeInsets.only(top: 34, left: 38),
@@ -127,7 +127,7 @@ class PaginaInicial extends StatelessWidget {
                     child: SvgPicture.asset('assets/images/placeholder.svg',
                         width: 100, height: 159),
                   ),
-                  Column(
+                  const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
