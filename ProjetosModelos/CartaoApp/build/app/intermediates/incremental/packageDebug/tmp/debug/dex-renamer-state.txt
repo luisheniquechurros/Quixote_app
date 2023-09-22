@@ -1,0 +1,4 @@
+#Thu Sep 21 15:54:54 BRT 2023
+base.0=A\:\\Desenvolvimento\\CartaoApp\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
