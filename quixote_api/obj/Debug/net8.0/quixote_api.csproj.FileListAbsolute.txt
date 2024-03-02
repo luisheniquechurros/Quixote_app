@@ -1,0 +1,4 @@
+C:\Users\Gusta\quixote_api\obj\Debug\net8.0\quixote_api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Gusta\quixote_api\obj\Debug\net8.0\quixote_api.AssemblyInfoInputs.cache
+C:\Users\Gusta\quixote_api\obj\Debug\net8.0\quixote_api.AssemblyInfo.cs
+C:\Users\Gusta\quixote_api\obj\Debug\net8.0\quixote_api.csproj.CoreCompileInputs.cache
