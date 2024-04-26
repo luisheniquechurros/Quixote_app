@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'login_page.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -13,8 +15,11 @@ class _MyWidgetState extends State<SplashPage> {
 
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 3)).then((_) => Navigator.of(context).pushReplacementNamed('/login'),
-    );
+    WidgetsBinding.instance.addPostFrameCallback((_) async {fluxoinitializacao();});
+  }
+
+  Future<void> fluxoinitializacao() async {
+    (const LoginPage());
   }
 
 
@@ -23,7 +28,7 @@ class _MyWidgetState extends State<SplashPage> {
     return Container(
       color: Colors.white,
       child: Center(
-        child: CircularProgressIndicator(color: Colors.black,),),
+        child: SvgPicture.asset('assets/images/splashlogo.svg'),)
     );
   }
 }

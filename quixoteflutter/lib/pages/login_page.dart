@@ -1,10 +1,12 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
-  @override
+  @override //@override = sobreescreve um método()
   State<LoginPage> createState() => _LoginPageState();
 }
 
@@ -18,13 +20,13 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
 
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Stack(
+    return Scaffold( // implementa o layou básico
+    backgroundColor: Colors.white,  //define a cor de fundo
+      body: Stack( //  o Stack é um widget que permite colocar um widget sobre o outro
         children: [
           // Imagem da mancha do entre
-          Padding(
-            padding: const EdgeInsets.only(top: 18, left: 0),
+          Padding( // Padding é um widget que permite colocar um widget dentro de um espaço
+            padding: const EdgeInsets.only(top: 18, left: 0), // define o espaço que o widget vai ocupar
             child: SvgPicture.asset(
               'assets/images/arcoiris.svg',
               width: 333,
@@ -32,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
           // Texto 1
-          Row(children: [
+          Row(children: [ // Row é um widget que permite colocar um widget um do lado do outro
             Padding(
               padding: EdgeInsets.only(top: 179, left: 116),
               child: Text(
@@ -42,7 +44,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             )
           ]),
-          // Texto 1
+          // Texto 2
           Row(children: [
             Padding(
               padding: EdgeInsets.only(top: 195, left: 103),
@@ -54,13 +56,14 @@ class _LoginPageState extends State<LoginPage> {
             )
           ]),
           // Formulário de login
-          Container(
+          Container( // Container é um widget que permite colocar um widget dentro de um container
             padding: EdgeInsets.only(left: 24, right: 24),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 // Campo de e-mail
-                TextFormField(
+                TextFormField( // TextFormField é um widget que permite criar um campo de formulário
+                  maxLength: 30,
                   keyboardType: TextInputType.emailAddress,
                   style: const TextStyle(fontSize: 16),
                   decoration: const InputDecoration(
@@ -77,7 +80,7 @@ class _LoginPageState extends State<LoginPage> {
                     hintText: "Senha",
                     suffixIcon: IconButton(
                       icon: isPassowordVisible
-                          ? const Icon(Icons.visibility)
+                          ? const Icon(Icons.visibility)  // a partir do pubspec.yaml se importa o pacote material_design_icons_flutter
                           : const Icon(Icons.visibility_off),
                       onPressed: () {
                         setState(() {
@@ -88,7 +91,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 // Botão de login
-                ElevatedButton(
+                ElevatedButton( // Usando o ElevatedButton para criar um botão com estilo mais moderno
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(318, 45),
@@ -105,7 +108,8 @@ class _LoginPageState extends State<LoginPage> {
             ),
           )
         ],
-      ),
+      )
+
     );
   }
 }
