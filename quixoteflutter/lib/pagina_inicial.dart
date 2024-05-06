@@ -1,7 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class PaginaInicial extends StatelessWidget {
+class PaginaInicial extends StatefulWidget {
+  const PaginaInicial({super.key});
+  @override
+  State <PaginaInicial> createState() => _PaginaInicialState();
+
+}
+
+ class _PaginaInicialState extends State<PaginaInicial> {
+
+  List pages = [
+    const PaginaInicial(),
+  ];
+  
   @override
   Widget build(BuildContext context) {
     // Obtém o tamanho da tela
