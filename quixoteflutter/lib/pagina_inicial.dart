@@ -24,6 +24,36 @@ class PaginaInicial extends StatefulWidget {
       body: Stack(
         children: [
           // Seção superior da página
+           Column(
+                children: [
+                  Padding(padding: const EdgeInsets.only(top: 0, left: 24),
+                  child: SvgPicture.asset(
+                    'assets/images/lampada.svg',
+                    width: 57,
+                    height: 170,
+                  ),)
+                ],
+              ),
+                Column(
+                children: [
+                  Padding(padding: const EdgeInsets.only(top: 0, left: 315),
+                  child: SvgPicture.asset(
+                    'assets/images/lampada.svg',
+                    width: 57,
+                    height: 170,
+                  ),)
+                ],
+              ),
+                Column(
+                children: [
+                  Padding(padding: const EdgeInsets.only(top: 0, left: 350),
+                  child: SvgPicture.asset(
+                    'assets/images/lampada.svg',
+                    width: 57,
+                    height: 170,
+                  ),)
+                ],
+              ),
           Column(
             children: [
               Padding(
@@ -205,7 +235,7 @@ class PaginaInicial extends StatefulWidget {
             left: 0,
             child: Container(
               width: size.width,
-              height: 80,
+              height: 60,
               decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border(top: BorderSide(color: Color(0xFFA8A8A8))),
@@ -221,17 +251,8 @@ class PaginaInicial extends StatefulWidget {
                   IconButton(
                     // Ícone da página inicial
                     icon: Icon(Icons.home, color: Colors.black),
-                    iconSize: 35,
+                    iconSize: 28,
                     onPressed: () {},
-                  ),
-                  IconButton(
-                    // Ícone dos encontros anteriores
-                    onPressed: () {},
-                    iconSize: 35,
-                    icon: Icon(
-                      Icons.access_time_filled_rounded,
-                      color: Colors.black,
-                    ),
                   ),
                   FloatingActionButton(
                     // Ícone da conta do usuário
@@ -239,25 +260,16 @@ class PaginaInicial extends StatefulWidget {
                     child: Icon(
                       Icons.account_circle,
                       color: Colors.grey,
-                      size: 60,
+                      size: 40,
                     ),
                     onPressed: () {},
                     backgroundColor: Colors.transparent,
                     elevation: 0.0,
                   ),
                   IconButton(
-                    // Ícone da agenda Quixote
-                    onPressed: () {},
-                    iconSize: 35,
-                    icon: Icon(
-                      Icons.calendar_month_rounded,
-                      color: Colors.black,
-                    ),
-                  ),
-                  IconButton(
                     // Ícone das configurações
                     onPressed: () {},
-                    iconSize: 35,
+                    iconSize: 28,
                     icon: Icon(
                       Icons.settings,
                       color: Colors.black,
