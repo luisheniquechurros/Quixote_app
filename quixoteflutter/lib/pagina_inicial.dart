@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class PaginaInicial extends StatefulWidget {
@@ -24,6 +25,12 @@ class PaginaInicial extends StatefulWidget {
       body: Stack(
         children: [
           // Seção superior da página
+          Container(
+            child: SvgPicture.asset('assets/images/fundo.svg'),
+            alignment: Alignment.center,
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+          ),
            Column(
                 children: [
                   Padding(padding: const EdgeInsets.only(top: 0, left: 24),
@@ -40,7 +47,7 @@ class PaginaInicial extends StatefulWidget {
                   child: SvgPicture.asset(
                     'assets/images/lampada.svg',
                     width: 57,
-                    height: 170,
+                    height: 160,
                   ),)
                 ],
               ),
@@ -50,8 +57,9 @@ class PaginaInicial extends StatefulWidget {
                   child: SvgPicture.asset(
                     'assets/images/lampada.svg',
                     width: 57,
-                    height: 170,
-                  ),)
+                    height: 180,
+                  ),
+                  )
                 ],
               ),
           Column(
@@ -70,7 +78,7 @@ class PaginaInicial extends StatefulWidget {
               Row(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(top: 50, left: 38),
+                    padding: EdgeInsets.only(top: 80, left: 38),
                     // Título da aplicação
                     child: Text(
                       'Quixote na Biblio',
