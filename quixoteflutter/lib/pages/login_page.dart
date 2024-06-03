@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:quixote_app/pagina_inicial.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  final Function()? onTap;
+  const LoginPage({Key? key, required this.onTap}) : super(key: key);
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -108,6 +110,25 @@ class _LoginPageState extends State<LoginPage> {
                 ],
               ),
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GestureDetector(
+                  onTap: widget.onTap,
+                  child: Text(
+                    "Não tem uma conta?",
+                    style: TextStyle(color: Colors.grey[700])
+                  ),
+                ),
+                const SizedBox(width: 4),
+                const Text(
+                  "Cadastre-se agora",
+                  style: TextStyle(
+                    color: Colors.blue, fontWeight: FontWeight.bold
+                  ),
+                )
+              ],
+            )
           ],
         ),
       ),

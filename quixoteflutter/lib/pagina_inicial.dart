@@ -75,6 +75,7 @@ class PaginaInicial extends StatefulWidget {
                   ),
                 ),
               ),
+              
               Row(
                 children: [
                   Padding(
@@ -88,79 +89,190 @@ class PaginaInicial extends StatefulWidget {
                 ],
               ),
               // Primeiro bloco de informações do encontro
-              Padding(
-                padding: const EdgeInsets.only(top: 32.0, left: 38, right: 22),
-                child: Container(
-                  width: 300.0,
-                  height: 159.0,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(12.0),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 2,
-                        blurRadius: 4,
-                        offset: const Offset(0, 4),
+              Container(
+                width: 300,
+                height: 159,
+                child: Stack(children: [
+                  Positioned(
+                    left: 0,
+                    top: 35,
+                    child: Container(
+                      width: 300,
+                      height: 123,
+                      decoration: ShapeDecoration(
+                        color: Color(0xCCF6F2F2),
+                        shape: RoundedRectangleBorder(
+                         borderRadius: BorderRadius.circular(12)
+                        ),
+                        shadows: [
+                          BoxShadow(
+                            color: Color(0x3F000000),
+                            blurRadius: 30,
+                            offset: Offset(0, 4),
+                            spreadRadius: 0,
+                          )
+                        ]
                       ),
-                    ],
+                    )),
+                    Positioned(
+                      left: 121,
+                      top: 35,
+                      child: SizedBox(
+                        width: 119,
+                        height: 12,
+                        child: Text(
+                          'Título do encontro',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 11,
+                            fontFamily: 'Open Sans',
+                            fontWeight: FontWeight.w700,
+                            height: 0,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                left: 121,
+                top: 119,
+                child: SizedBox(
+                  width: 119,
+                  height: 30,
+                  child: Text(
+                    'Encontro: --/--/--, --h\n',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 11,
+                      fontFamily: 'Open Sans',
+                      fontWeight: FontWeight.w400,
+                      height: 0,
+                    ),
                   ),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                ),
+              ),
+              Positioned(
+                left: 121,
+                top: 59,
+                child: SizedBox(
+                  width: 119,
+                  height: 12,
+                  child: Text(
+                    'Autor da obra',
+                    style: TextStyle(
+                      color: Color(0xFF2575EE),
+                      fontSize: 11,
+                      fontFamily: 'Open Sans',
+                      fontWeight: FontWeight.w400,
+                      height: 0,
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 0,
+                top: 0,
+                child: Container(
+                  width: 100,
+                  height: 159,
+                  child: Stack(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(right: 21),
-                        // Imagem do encontro
-                        child: SvgPicture.asset('assets/images/placeholder.svg',
-                            width: 100, height: 159),
+                      Positioned(
+                        left: 0,
+                        top: 0,
+                        child: Container(
+                          width: 100,
+                          height: 159,
+                          decoration: ShapeDecoration(
+                            color: Colors.white,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            shadows: [
+                              BoxShadow(
+                                color: Color(0x3F000000),
+                                blurRadius: 30,
+                                offset: Offset(0, 4),
+                                spreadRadius: 0,
+                              )
+                            ],
+                          ),
+                        ),
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(top: 14),
-                            // Nome do encontro
-                            child: Text(
-                              'Nome do encontro',
-                              style: TextStyle(fontSize: 9),
-                            ),
+                      Positioned(
+                        left: 0,
+                        top: 0,
+                        child: Container(
+                          width: 100,
+                          height: 159,
+                          child: Stack(
+                            children: [
+                              Positioned(
+                                left: 0,
+                                top: 0,
+                                child: Container(
+                                  width: 100,
+                                  height: 159,
+                                  decoration: ShapeDecoration(
+                                    shape: RoundedRectangleBorder(
+                                      side: BorderSide(width: 1),
+                                      borderRadius: BorderRadius.circular(12),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                left: 4,
+                                top: 3,
+                                child: Transform(
+                                  transform: Matrix4.identity()..translate(0.0, 0.0)..rotateZ(1.04),
+                                  child: Container(
+                                    width: 176.65,
+                                    decoration: ShapeDecoration(
+                                      shape: RoundedRectangleBorder(
+                                        side: BorderSide(
+                                          width: 1,
+                                          strokeAlign: BorderSide.strokeAlignCenter,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                left: 95,
+                                top: 2,
+                                child: Transform(
+                                  transform: Matrix4.identity()..translate(0.0, 0.0)..rotateZ(2.08),
+                                  child: Container(
+                                    width: 175.51,
+                                    decoration: ShapeDecoration(
+                                      shape: RoundedRectangleBorder(
+                                        side: BorderSide(
+                                          width: 1,
+                                          strokeAlign: BorderSide.strokeAlignCenter,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 10),
-                            // Nome do autor(a)
-                            child: Text(
-                              'Nome do autor(a)',
-                              style: TextStyle(fontSize: 9, color: Colors.blue),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 5),
-                            // Data do encontro
-                            child: Text(
-                              'Data do encontro',
-                              style: TextStyle(fontSize: 9),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 36),
-                            // Barra de progresso
-                            child: Text(
-                              'Barra de progresso',
-                              style: TextStyle(fontSize: 9),
-                            ),
-                          ),
-                        ],
+                        ),
                       ),
                     ],
                   ),
                 ),
               ),
-              // Segunda seção de informações do encontro
-              Row(
+            ],
+          ),
+        ),
+      
+   Row(
                 children: [
                   Padding(
-                    padding: EdgeInsets.only(top: 34, left: 38),
-                    // Título da aplicação (repetido)
+                    padding: EdgeInsets.only(top: 80, left: 38),
+                    // Título da aplicação
                     child: Text(
                       'Quixote na Biblio',
                       style: TextStyle(fontSize: 14),
@@ -168,73 +280,186 @@ class PaginaInicial extends StatefulWidget {
                   ),
                 ],
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 16.0, left: 38, right: 22),
-                child: Container(
-                  width: 300.0,
-                  height: 159.0,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(12.0),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
-                        spreadRadius: 2,
-                        blurRadius: 4,
-                        offset: const Offset(0, 4),
+              // Primeiro bloco de informações do encontro
+              Container(
+                width: 300,
+                height: 159,
+                child: Stack(children: [
+                  Positioned(
+                    left: 0,
+                    top: 35,
+                    child: Container(
+                      width: 300,
+                      height: 123,
+                      decoration: ShapeDecoration(
+                        color: Color(0xCCF6F2F2),
+                        shape: RoundedRectangleBorder(
+                         borderRadius: BorderRadius.circular(12)
+                        ),
+                        shadows: [
+                          BoxShadow(
+                            color: Color(0x3F000000),
+                            blurRadius: 30,
+                            offset: Offset(0, 4),
+                            spreadRadius: 0,
+                          )
+                        ]
                       ),
-                    ],
+                    )),
+                    Positioned(
+                      left: 121,
+                      top: 35,
+                      child: SizedBox(
+                        width: 119,
+                        height: 12,
+                        child: Text(
+                          'Título do encontro',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 11,
+                            fontFamily: 'Open Sans',
+                            fontWeight: FontWeight.w700,
+                            height: 0,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                left: 121,
+                top: 119,
+                child: SizedBox(
+                  width: 119,
+                  height: 30,
+                  child: Text(
+                    'Encontro: --/--/--, --h\n',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 11,
+                      fontFamily: 'Open Sans',
+                      fontWeight: FontWeight.w400,
+                      height: 0,
+                    ),
                   ),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                ),
+              ),
+              Positioned(
+                left: 121,
+                top: 59,
+                child: SizedBox(
+                  width: 119,
+                  height: 12,
+                  child: Text(
+                    'Autor da obra',
+                    style: TextStyle(
+                      color: Color(0xFF2575EE),
+                      fontSize: 11,
+                      fontFamily: 'Open Sans',
+                      fontWeight: FontWeight.w400,
+                      height: 0,
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 0,
+                top: 0,
+                child: Container(
+                  width: 100,
+                  height: 159,
+                  child: Stack(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(right: 21),
-                        // Imagem do encontro (repetido)
-                        child: SvgPicture.asset('assets/images/placeholder.svg',
-                            width: 100, height: 159),
+                      Positioned(
+                        left: 0,
+                        top: 0,
+                        child: Container(
+                          width: 100,
+                          height: 159,
+                          decoration: ShapeDecoration(
+                            color: Colors.white,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            shadows: [
+                              BoxShadow(
+                                color: Color(0x3F000000),
+                                blurRadius: 30,
+                                offset: Offset(0, 4),
+                                spreadRadius: 0,
+                              )
+                            ],
+                          ),
+                        ),
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(top: 14),
-                            // Nome do encontro (repetido)
-                            child: Text(
-                              'Nome do encontro',
-                              style: TextStyle(fontSize: 9),
-                            ),
+                      Positioned(
+                        left: 0,
+                        top: 0,
+                        child: Container(
+                          width: 100,
+                          height: 159,
+                          child: Stack(
+                            children: [
+                              Positioned(
+                                left: 0,
+                                top: 0,
+                                child: Container(
+                                  width: 100,
+                                  height: 159,
+                                  decoration: ShapeDecoration(
+                                    shape: RoundedRectangleBorder(
+                                      side: BorderSide(width: 1),
+                                      borderRadius: BorderRadius.circular(12),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                left: 4,
+                                top: 3,
+                                child: Transform(
+                                  transform: Matrix4.identity()..translate(0.0, 0.0)..rotateZ(1.04),
+                                  child: Container(
+                                    width: 176.65,
+                                    decoration: ShapeDecoration(
+                                      shape: RoundedRectangleBorder(
+                                        side: BorderSide(
+                                          width: 1,
+                                          strokeAlign: BorderSide.strokeAlignCenter,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Positioned(
+                                left: 95,
+                                top: 2,
+                                child: Transform(
+                                  transform: Matrix4.identity()..translate(0.0, 0.0)..rotateZ(2.08),
+                                  child: Container(
+                                    width: 175.51,
+                                    decoration: ShapeDecoration(
+                                      shape: RoundedRectangleBorder(
+                                        side: BorderSide(
+                                          width: 1,
+                                          strokeAlign: BorderSide.strokeAlignCenter,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 10),
-                            // Nome do autor(a) (repetido)
-                            child: Text(
-                              'Nome do autor(a)',
-                              style: TextStyle(fontSize: 9, color: Colors.blue),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 5),
-                            // Data do encontro (repetido)
-                            child: Text(
-                              'Data do encontro',
-                              style: TextStyle(fontSize: 9),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 36),
-                            // Barra de progresso (repetido)
-                            child: Text(
-                              'Barra de progresso',
-                              style: TextStyle(fontSize: 9),
-                            ),
-                          ),
-                        ],
+                        ),
                       ),
                     ],
                   ),
                 ),
               ),
+            ],
+          ),
+        ),
+
             ],
           ),
           // Barra de navegação inferior
