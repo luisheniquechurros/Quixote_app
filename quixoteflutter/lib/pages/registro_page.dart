@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:quixote_app/pagina_inicial.dart';
-import 'registro_page.dart'; // Importe a página de registro
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
-
+class RegistroPage extends StatefulWidget {
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  _RegistroPageState createState() => _RegistroPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegistroPageState extends State<RegistroPage> {
   bool isPasswordVisible = false;
   bool isLoading = false;
 
@@ -34,25 +32,43 @@ class _LoginPageState extends State<LoginPage> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Text(
-                'Ao se inscrever você está',
+                'Inscreva-se para começar',
                 style: TextStyle(fontSize: 15),
                 textAlign: TextAlign.center,
               ),
             ),
             const SizedBox(height: 8),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Text(
-                'concordando em quebrar as regras',
-                style: TextStyle(fontSize: 15),
-                textAlign: TextAlign.center,
-              ),
-            ),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  TextFormField(
+                    maxLength: 30,
+                    style: const TextStyle(fontSize: 16),
+                    decoration: const InputDecoration(
+                      hintText: "Nome completo",
+                      hintStyle: TextStyle(fontSize: 15),
+                    ),
+                  ),
+                  TextFormField(
+                    maxLength: 30,
+                    keyboardType: TextInputType.phone,
+                    style: const TextStyle(fontSize: 16),
+                    decoration: const InputDecoration(
+                      hintText: "Numero de telefone",
+                      hintStyle: TextStyle(fontSize: 15),
+                    ),
+                  ),
+                  TextFormField(
+                    maxLength: 30,
+                    keyboardType: TextInputType.name,
+                    style: const TextStyle(fontSize: 16),
+                    decoration: const InputDecoration(
+                      hintText: "Nome de usuário",
+                      hintStyle: TextStyle(fontSize: 15),
+                    ),
+                  ),
                   TextFormField(
                     maxLength: 30,
                     keyboardType: TextInputType.emailAddress,
@@ -81,10 +97,28 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                   ),
+                  TextFormField(
+                    maxLength: 12,
+                    obscureText: !isPasswordVisible,
+                    style: const TextStyle(fontSize: 16),
+                    decoration: InputDecoration(
+                      hintText: "Confirmar a senha",
+                      suffixIcon: IconButton(
+                        icon: isPasswordVisible
+                            ? const Icon(Icons.visibility)
+                            : const Icon(Icons.visibility_off),
+                        onPressed: () {
+                          setState(() {
+                            isPasswordVisible = !isPasswordVisible;
+                          });
+                        },
+                      ),
+                    ),
+                  ),
                   const SizedBox(height: 16),
                   ElevatedButton(
                     onPressed: () {
-                      _handleLogin();
+                      // registrar
                     },
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(318, 45),
@@ -95,7 +129,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       foregroundColor: Colors.white,
                     ),
-                    child: const Text('Login'),
+                    child: const Text('Registrar'),
                   ),
                 ],
               ),
@@ -104,19 +138,16 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Não tem uma conta?",
+                  "Já tem uma conta?",
                   style: TextStyle(color: Colors.grey[700]),
                 ),
                 const SizedBox(width: 4),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => RegistroPage()), // Navega para a página de registro
-                    );
+                    Navigator.pop(context); // Volta para a página de login
                   },
                   child: const Text(
-                    "Cadastre-se agora",
+                    "Faça login",
                     style: TextStyle(
                       color: Colors.blue, 
                       fontWeight: FontWeight.bold,
@@ -129,22 +160,5 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
-  }
-
-  Future<void> _handleLogin() async {
-    setState(() {
-      isLoading = true;
-    });
-
-    await Future.delayed(const Duration(seconds: 2));
-
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (context) => const PaginaInicial()),
-    );
-
-    setState(() {
-      isLoading = false;
-    });
   }
 }
